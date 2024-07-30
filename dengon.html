@@ -1,14 +1,21 @@
+<!doctype html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <meta charset="utf-8"/>
+    <script>
+function 伝言する() {
+  if (入力内容.value === "") {
+    alert("内容を入れてください");
+  } else {
+    伝言エリア.innerText = 入力内容.value;
+    alert("伝言をセットしました");
+  }
+}
+</script>
   </head>
   <body>
-    <a-scene>
-      <a-box position="-1 3 -3" rotation="45 45 45" color="#8B37A9"></a-box>
-      <a-sphere position="1 3 -5" radius="0.5" color="#CDB550"></a-sphere>
-      <a-cylinder position="1 0.75 -3" rotation="0 0 -45" radius="0.25" height="10" color="#4CFFA0"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="6" height="15" color="#EE3210"></a-plane>
-      <a-sky color="#777777"></a-sky>
-    </a-scene>
+    伝言板
+    <p id="伝言エリア">伝言はまだありません</p>
+    <input id="入力内容"><button onclick="伝言する();">セット</button>
   </body>
 </html>
